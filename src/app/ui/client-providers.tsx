@@ -1,5 +1,6 @@
 "use client";
 
+import { Theme } from "@radix-ui/themes";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 const queryClient = new QueryClient();
@@ -10,7 +11,9 @@ const ClientProviders = ({
   children: React.ReactNode;
 }>) => {
   return (
-    <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
+    <QueryClientProvider client={queryClient}>
+      <Theme>{children}</Theme>
+    </QueryClientProvider>
   );
 };
 
