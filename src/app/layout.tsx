@@ -1,6 +1,11 @@
 import type { Metadata } from "next";
+import { Grid } from "@radix-ui/themes";
 import "@radix-ui/themes/styles.css";
 import ClientProviders from "./ui/client-providers";
+import "tailwindcss/tailwind.css";
+
+import Header from "./ui/layout/header";
+import Footer from "./ui/layout/footer";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,7 +20,19 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <ClientProviders>{children}</ClientProviders>
+        <Grid className="grid min-h-screen grid-rows-[auto,1fr,auto]">
+          <div className="row-start-1 row-end-2">
+            <Header />
+          </div>
+          <div className="row-start-2 row-end-3 overflow-auto">
+            <div className="mx-auto max-w-7xl px-4 py-8">
+              <ClientProviders>{children}</ClientProviders>
+            </div>
+          </div>
+          <div className="row-start-3 row-end-4">
+            <Footer />
+          </div>
+        </Grid>
       </body>
     </html>
   );
