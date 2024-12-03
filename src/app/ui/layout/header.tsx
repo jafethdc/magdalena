@@ -5,9 +5,9 @@ const Header: React.FC = () => {
   return (
     <Box as="div" className="bg-orange-200 text-black p-4 shadow">
       <Grid className="mx-auto max-w-7xl grid-cols-[1fr,auto]">
-        <a href="/" className="font-bold text-xl">
+        <Link href="/" className="font-bold text-xl">
           QLQ
-        </a>
+        </Link>
         <nav>
           <Grid className="grid-cols-[repeat(2,max-content)]">
             <Link href="/sample-page">Sample Page</Link>
